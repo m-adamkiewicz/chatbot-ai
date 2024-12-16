@@ -1,0 +1,22 @@
+.landing-page {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.all {
+    height: 100%;
+}
+
+button {
+    background-color: transparent;
+    font-size: xx-large;
+    border: none;
+    color: #e8ecff;
+    cursor: pointer;
+}
+
+.icon {
+    transform: scale(4);
+}

@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
+
+.chat-wrapper {
+    margin: auto;
+    max-width: 1200px;
+    min-width: 900px;
+}
+
+.chat {
+    padding-top: 20px;
+    margin-bottom: 20px;
+    overflow-y: scroll;
+    height: 85vh;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.chat::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.chat {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.current-message {
+    height: 85vh;
+}
+
+.message-input {
+    padding: 20px 15px 0px 15px;
+    border-radius: 10px;
+    background-color: #242f50;
+    border:solid thin #808080;
+    padding-left: 50px;
+}
+
+.mat-mdc-form-field {
+    width: 90%;
+    margin-right: 40px;
+}
+
+.button-container {
+    display: inline;
+}
+
+button {
+    background-color: transparent;
+    font-size: xx-large;
+    border: none;
+    color: #e8ecff;
+    cursor: pointer;
+}
+
+button:disabled {
+    color: #808080;
+    cursor: auto;
+}
+
+.icon {
+    transform: scale(2);
+}

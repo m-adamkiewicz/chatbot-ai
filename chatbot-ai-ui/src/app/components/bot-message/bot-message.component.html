@@ -1,0 +1,47 @@
+@if(message){
+<div class="message-wrapper">
+    @if(message!.isCompleted===false) {
+    <div class="cancel-section">
+        <div class="button-container">
+            <button mat-fab extended (click)="cancel()">
+                <mat-icon>cancel</mat-icon>
+            </button>
+        </div>
+    </div>
+    }
+    <p>{{message!.content!.text}}</p>
+    <br>
+    @if(message!.isCompleted) {
+    <div class="reaction-section">
+        @if(isUpvoted()) {
+        <div class="button-container">
+            <button mat-fab extended (click)="reset()">
+                <mat-icon class="material-icons">thumb_up</mat-icon>
+            </button>
+        </div>
+        }
+        @else{
+        <div class="button-container">
+            <button mat-fab extended (click)="thumbsUp()">
+                <mat-icon class="material-icons-outlined">thumb_up</mat-icon>
+            </button>
+        </div>
+        }
+        @if(isDownvoted()) {
+        <div class="button-container">
+            <button mat-fab extended (click)="reset()">
+                <mat-icon class="material-icons">thumb_down</mat-icon>
+            </button>
+        </div>
+        }
+        @else {
+        <div class="button-container">
+            <button mat-fab extended (click)="thumbsDown()">
+                <mat-icon class="material-icons-outlined">thumb_down</mat-icon>
+            </button>
+        </div>
+        }
+    </div>
+    }
+</div>
+}

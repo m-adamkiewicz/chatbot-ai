@@ -1,0 +1,12 @@
+@if(isChatOpen) {
+<div class="all">
+    <app-chat></app-chat>
+</div>
+}
+@else {
+<div class="landing-page">
+    <button mat-fab extended (click)="isChatOpen=true">
+        <mat-icon class="icon">chat</mat-icon>
+    </button>
+</div>
+}

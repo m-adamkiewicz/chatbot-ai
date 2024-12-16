@@ -1,0 +1,41 @@
+@ChatbotUrl = http://localhost:5007
+
+
+GET {{ChatbotUrl}}/messages
+Accept: application/json
+
+###
+
+POST {{ChatbotUrl}}/messages
+Content-Type: application/json
+
+{
+  "Text": "Test 1"
+}
+
+###
+
+@messageId = 0193c9b0-83c6-73cd-a559-79f153ac8242
+@responseId = 0193c9b0-83c7-71ef-a44a-e05f38db8fff
+
+PUT {{ChatbotUrl}}/messages/{{messageId}}/start
+Content-Type: application/json
+
+{
+  "responseId": "{{responseId}}"
+}
+
+###
+
+POST {{ChatbotUrl}}/messages/{{messageId}}/cancel
+Content-Type: application/json
+
+###
+
+PUT {{ChatbotUrl}}/messages/{{responseId}}/react
+Content-Type: application/json
+
+{
+  "reaction": 2
+}
+###

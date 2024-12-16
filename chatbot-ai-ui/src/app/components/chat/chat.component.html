@@ -1,0 +1,35 @@
+@if(history){
+    <div class="chat-wrapper">
+        <div class="chat">
+            <div class="history">
+                @for(msg of history; track msg.id) {
+                @if(isHuman(msg)) {
+                <app-human-message [message]="msg"></app-human-message>
+                }
+                @else {
+                <app-bot-message [message]="msg"></app-bot-message>
+                }
+                }
+            </div>
+            <div id="current" class="current-message">
+                @if(currentMessage) {
+                <app-human-message [message]="currentMessage"></app-human-message>
+                }
+                @if(currentResponse) {
+                <app-bot-message [message]="currentResponse"></app-bot-message>
+                }
+            </div>
+        </div>
+        <div class="message-input">
+            <mat-form-field class="form-field">
+                <mat-label>Type message</mat-label>
+                <input matInput type="text" [(ngModel)]="message">
+            </mat-form-field>
+            <div class="button-container">
+                <button mat-fab aria-label="sendMessage" (click)="sendMessage()" [disabled]="isSendDisabled()">
+                    <mat-icon class="icon">send</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+}
